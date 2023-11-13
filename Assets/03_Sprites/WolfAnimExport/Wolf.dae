@@ -1,0 +1,1311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <created>2023-11-01T11:46:06Z</created>
+    <modified>2023-11-01T11:46:06Z</modified>
+    <revision>1.0</revision>
+  </asset>
+  <library_images>
+    <image id="WolfBody-diffuse-tex" name="WolfBody-diffuse-tex">
+      <init_from>Wolf_res/Wolf_WolfBody_diffuse.png</init_from>
+    </image>
+    <image id="WolfBody-emissive-tex" name="WolfBody-emissive-tex">
+      <init_from>Wolf_res/Wolf_WolfBody_emissive.png</init_from>
+    </image>
+    <image id="WolfHead-diffuse-tex" name="WolfHead-diffuse-tex">
+      <init_from>Wolf_res/Wolf_WolfHead_diffuse.png</init_from>
+    </image>
+    <image id="WolfHead-emissive-tex" name="WolfHead-emissive-tex">
+      <init_from>Wolf_res/Wolf_WolfHead_emissive.png</init_from>
+    </image>
+    <image id="WolfRightHand-diffuse-tex" name="WolfRightHand-diffuse-tex">
+      <init_from>Wolf_res/Wolf_WolfRightHand_diffuse.png</init_from>
+    </image>
+    <image id="WolfRightHand-emissive-tex" name="WolfRightHand-emissive-tex">
+      <init_from>Wolf_res/Wolf_WolfRightHand_emissive.png</init_from>
+    </image>
+    <image id="WolfLeftHand-diffuse-tex" name="WolfLeftHand-diffuse-tex">
+      <init_from>Wolf_res/Wolf_WolfLeftHand_diffuse.png</init_from>
+    </image>
+    <image id="WolfLeftHand-emissive-tex" name="WolfLeftHand-emissive-tex">
+      <init_from>Wolf_res/Wolf_WolfLeftHand_emissive.png</init_from>
+    </image>
+    <image id="WolfRightFoot-diffuse-tex" name="WolfRightFoot-diffuse-tex">
+      <init_from>Wolf_res/Wolf_WolfRightFoot_diffuse.png</init_from>
+    </image>
+    <image id="WolfRightFoot-emissive-tex" name="WolfRightFoot-emissive-tex">
+      <init_from>Wolf_res/Wolf_WolfRightFoot_emissive.png</init_from>
+    </image>
+    <image id="WolfLeftFoot-diffuse-tex" name="WolfLeftFoot-diffuse-tex">
+      <init_from>Wolf_res/Wolf_WolfLeftFoot_diffuse.png</init_from>
+    </image>
+    <image id="WolfLeftFoot-emissive-tex" name="WolfLeftFoot-emissive-tex">
+      <init_from>Wolf_res/Wolf_WolfLeftFoot_emissive.png</init_from>
+    </image>
+  </library_images>
+  <library_effects>
+    <effect id="WolfBody-Effect">
+      <profile_COMMON>
+        <newparam sid="WolfBody-diffuse-surface">
+          <surface type="2D">
+            <init_from>WolfBody-diffuse-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="WolfBody-emissive-surface">
+          <surface type="2D">
+            <init_from>WolfBody-emissive-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="WolfBody-diffuse-sampler">
+          <sampler2D>
+            <source>WolfBody-diffuse-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="WolfBody-emissive-sampler">
+          <sampler2D>
+            <source>WolfBody-emissive-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <texture texcoord="WolfBody-tex-bind" texture="WolfBody-emissive-sampler"/>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="WolfBody-tex-bind" texture="WolfBody-diffuse-sampler"/>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>5.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.2</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="WolfHead-Effect">
+      <profile_COMMON>
+        <newparam sid="WolfHead-diffuse-surface">
+          <surface type="2D">
+            <init_from>WolfHead-diffuse-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="WolfHead-emissive-surface">
+          <surface type="2D">
+            <init_from>WolfHead-emissive-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="WolfHead-diffuse-sampler">
+          <sampler2D>
+            <source>WolfHead-diffuse-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="WolfHead-emissive-sampler">
+          <sampler2D>
+            <source>WolfHead-emissive-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <texture texcoord="WolfHead-tex-bind" texture="WolfHead-emissive-sampler"/>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="WolfHead-tex-bind" texture="WolfHead-diffuse-sampler"/>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>5.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.2</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="WolfRightHand-Effect">
+      <profile_COMMON>
+        <newparam sid="WolfRightHand-diffuse-surface">
+          <surface type="2D">
+            <init_from>WolfRightHand-diffuse-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="WolfRightHand-emissive-surface">
+          <surface type="2D">
+            <init_from>WolfRightHand-emissive-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="WolfRightHand-diffuse-sampler">
+          <sampler2D>
+            <source>WolfRightHand-diffuse-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="WolfRightHand-emissive-sampler">
+          <sampler2D>
+            <source>WolfRightHand-emissive-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <texture texcoord="WolfRightHand-tex-bind" texture="WolfRightHand-emissive-sampler"/>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="WolfRightHand-tex-bind" texture="WolfRightHand-diffuse-sampler"/>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>5.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.2</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="WolfLeftHand-Effect">
+      <profile_COMMON>
+        <newparam sid="WolfLeftHand-diffuse-surface">
+          <surface type="2D">
+            <init_from>WolfLeftHand-diffuse-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="WolfLeftHand-emissive-surface">
+          <surface type="2D">
+            <init_from>WolfLeftHand-emissive-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="WolfLeftHand-diffuse-sampler">
+          <sampler2D>
+            <source>WolfLeftHand-diffuse-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="WolfLeftHand-emissive-sampler">
+          <sampler2D>
+            <source>WolfLeftHand-emissive-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <texture texcoord="WolfLeftHand-tex-bind" texture="WolfLeftHand-emissive-sampler"/>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="WolfLeftHand-tex-bind" texture="WolfLeftHand-diffuse-sampler"/>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>5.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.2</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="WolfRightFoot-Effect">
+      <profile_COMMON>
+        <newparam sid="WolfRightFoot-diffuse-surface">
+          <surface type="2D">
+            <init_from>WolfRightFoot-diffuse-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="WolfRightFoot-emissive-surface">
+          <surface type="2D">
+            <init_from>WolfRightFoot-emissive-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="WolfRightFoot-diffuse-sampler">
+          <sampler2D>
+            <source>WolfRightFoot-diffuse-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="WolfRightFoot-emissive-sampler">
+          <sampler2D>
+            <source>WolfRightFoot-emissive-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <texture texcoord="WolfRightFoot-tex-bind" texture="WolfRightFoot-emissive-sampler"/>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="WolfRightFoot-tex-bind" texture="WolfRightFoot-diffuse-sampler"/>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>5.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.2</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="WolfLeftFoot-Effect">
+      <profile_COMMON>
+        <newparam sid="WolfLeftFoot-diffuse-surface">
+          <surface type="2D">
+            <init_from>WolfLeftFoot-diffuse-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="WolfLeftFoot-emissive-surface">
+          <surface type="2D">
+            <init_from>WolfLeftFoot-emissive-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="WolfLeftFoot-diffuse-sampler">
+          <sampler2D>
+            <source>WolfLeftFoot-diffuse-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="WolfLeftFoot-emissive-sampler">
+          <sampler2D>
+            <source>WolfLeftFoot-emissive-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <texture texcoord="WolfLeftFoot-tex-bind" texture="WolfLeftFoot-emissive-sampler"/>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="WolfLeftFoot-tex-bind" texture="WolfLeftFoot-diffuse-sampler"/>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>5.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.2</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="WolfBody-Material">
+      <instance_effect url="#WolfBody-Effect"/>
+    </material>
+    <material id="WolfHead-Material">
+      <instance_effect url="#WolfHead-Effect"/>
+    </material>
+    <material id="WolfRightHand-Material">
+      <instance_effect url="#WolfRightHand-Effect"/>
+    </material>
+    <material id="WolfLeftHand-Material">
+      <instance_effect url="#WolfLeftHand-Effect"/>
+    </material>
+    <material id="WolfRightFoot-Material">
+      <instance_effect url="#WolfRightFoot-Effect"/>
+    </material>
+    <material id="WolfLeftFoot-Material">
+      <instance_effect url="#WolfLeftFoot-Effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="WolfBody-Geom" name="WolfBody-Geom">
+      <mesh>
+        <source id="WolfBody-Pos">
+          <float_array count="120" id="WolfBody-Pos-array">-2.0 -3.0 1.5 -2.0 3.0 1.5 -2.0 3.0 -0.49999997 -2.0 -3.0 -0.49999997 -2.0 -3.0 -0.49999997 -2.0 -0.99999994 -0.49999997 -2.0 -0.99999994 -1.5 -2.0 -3.0 -1.5 2.0 -3.0 -0.49999997 2.0 3.0 -0.49999997 2.0 3.0 1.5 2.0 -3.0 1.5 2.0 -3.0 -1.5 2.0 -0.99999994 -1.5 2.0 -0.99999994 -0.49999997 2.0 -3.0 -0.49999997 -2.0 -3.0 -1.5 2.0 -3.0 -1.5 2.0 -3.0 1.5 -2.0 -3.0 1.5 -2.0 -0.99999994 -0.49999997 2.0 -0.99999994 -0.49999997 2.0 -0.99999994 -1.5 -2.0 -0.99999994 -1.5 -2.0 3.0 1.5 2.0 3.0 1.5 2.0 3.0 -0.49999997 -2.0 3.0 -0.49999997 -2.0 -0.99999994 -1.5 2.0 -0.99999994 -1.5 2.0 -3.0 -1.5 -2.0 -3.0 -1.5 -2.0 3.0 -0.49999997 2.0 3.0 -0.49999997 2.0 -0.99999994 -0.49999997 -2.0 -0.99999994 -0.49999997 -2.0 -3.0 1.5 2.0 -3.0 1.5 2.0 3.0 1.5 -2.0 3.0 1.5 </float_array>
+          <technique_common>
+            <accessor count="40" source="#WolfBody-Pos-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfBody-UV">
+          <float_array count="80" id="WolfBody-UV-array">0.125 0.625 0.125 1.0 0.0 1.0 0.0 0.625 0.0625 0.875 0.0625 1.0 0.0 1.0 0.0 0.875 0.0 0.625 0.0 1.0 0.125 1.0 0.125 0.625 0.0 0.875 0.0 1.0 0.0625 1.0 0.0625 0.875 0.5 0.75 0.5 1.0 0.6875 1.0 0.6875 0.75 0.0625 0.75 0.0625 1.0 0.0 1.0 0.0 0.75 0.125 0.75 0.125 1.0 0.0 1.0 0.0 0.75 0.125 0.75 0.125 1.0 0.0 1.0 0.0 0.75 0.0 0.25 0.25 0.25 0.25 0.5 0.0 0.5 0.5 0.5 0.75 0.5 0.75 0.125 0.5 0.125 </float_array>
+          <technique_common>
+            <accessor count="40" source="#WolfBody-UV-array" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfBody-Normal">
+          <float_array count="18" id="WolfBody-Normal-array">-1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0</float_array>
+          <technique_common>
+            <accessor count="6" source="#WolfBody-Normal-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="WolfBody-Vertices">
+          <input semantic="POSITION" source="#WolfBody-Pos"/>
+        </vertices>
+        <polylist count="10" material="WolfBody-Material">
+          <input offset="0" semantic="VERTEX" source="#WolfBody-Vertices"/>
+          <input offset="1" semantic="TEXCOORD" set="0" source="#WolfBody-UV"/>
+          <input offset="2" semantic="NORMAL" source="#WolfBody-Normal"/>
+          <vcount>4 4 4 4 4 4 4 4 4 4 </vcount>
+          <p>0 0 0 1 1 0 2 2 0 3 3 0 4 4 0 5 5 0 6 6 0 7 7 0 8 8 1 9 9 1 10 10 1 11 11 1 12 12 1 13 13 1 14 14 1 15 15 1 16 16 2 17 17 2 18 18 2 19 19 2 20 20 3 21 21 3 22 22 3 23 23 3 24 24 3 25 25 3 26 26 3 27 27 3 28 28 4 29 29 4 30 30 4 31 31 4 32 32 4 33 33 4 34 34 4 35 35 4 36 36 5 37 37 5 38 38 5 39 39 5 </p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="WolfHead-Geom" name="WolfHead-Geom">
+      <mesh>
+        <source id="WolfHead-Pos">
+          <float_array count="792" id="WolfHead-Pos-array">-2.9999998 -1.4999998 -0.49999973 -2.9999998 -0.49999973 -0.49999973 -2.9999998 -0.49999973 -1.4999998 -2.9999998 -1.4999998 -1.4999998 -2.0 -2.5 -1.4999998 -2.0 0.5000001 -1.4999998 -2.0 0.5000001 -3.4999998 -2.0 -2.5 -3.4999998 -2.0 -0.49999973 -0.49999973 -2.0 3.4999998 -0.49999973 -2.0 3.4999998 -1.4999998 -2.0 -0.49999973 -1.4999998 -2.0 -2.5 0.5000001 -2.0 1.5 0.5000001 -2.0 1.5 -0.49999973 -2.0 -2.5 -0.49999973 -2.0 -2.5 -0.49999973 -2.0 -1.4999998 -0.49999973 -2.0 -1.4999998 -1.4999998 -2.0 -2.5 -1.4999998 -2.0 -1.4999998 1.5 -2.0 -0.49999973 1.5 -2.0 -0.49999973 0.5000001 -2.0 -1.4999998 0.5000001 -1.0 -3.4999998 3.4999998 -1.0 -1.4999998 3.4999998 -1.0 -1.4999998 0.5000001 -1.0 -3.4999998 0.5000001 -1.0 -3.4999998 -1.4999998 -1.0 -2.5 -1.4999998 -1.0 -2.5 -3.4999998 -1.0 -3.4999998 -3.4999998 -1.0 -3.4999998 0.5000001 -1.0 -2.5 0.5000001 -1.0 -2.5 -0.49999973 -1.0 -3.4999998 -0.49999973 -1.0 -0.49999973 1.5 -1.0 0.5000001 1.5 -1.0 0.5000001 0.5000001 -1.0 -0.49999973 0.5000001 0.9999998 1.5 -0.49999973 0.9999998 3.4999998 -0.49999973 0.9999998 3.4999998 -1.4999998 0.9999998 1.5 -1.4999998 0.9999998 0.5000001 0.5000001 0.9999998 1.5 0.5000001 0.9999998 1.5 -0.49999973 0.9999998 0.5000001 -0.49999973 -1.0 1.5 -1.4999998 -1.0 3.4999998 -1.4999998 -1.0 3.4999998 -0.49999973 -1.0 1.5 -0.49999973 -1.0 0.5000001 -0.49999973 -1.0 1.5 -0.49999973 -1.0 1.5 0.5000001 -1.0 0.5000001 0.5000001 0.9999998 -3.4999998 0.5000001 0.9999998 -1.4999998 0.5000001 0.9999998 -1.4999998 3.4999998 0.9999998 -3.4999998 3.4999998 0.9999998 -3.4999998 -3.4999998 0.9999998 -2.5 -3.4999998 0.9999998 -2.5 -1.4999998 0.9999998 -3.4999998 -1.4999998 0.9999998 -3.4999998 -0.49999973 0.9999998 -2.5 -0.49999973 0.9999998 -2.5 0.5000001 0.9999998 -3.4999998 0.5000001 0.9999998 -0.49999973 0.5000001 0.9999998 0.5000001 0.5000001 0.9999998 0.5000001 1.5 0.9999998 -0.49999973 1.5 1.9999996 -2.5 -3.4999998 1.9999996 0.5000001 -3.4999998 1.9999996 0.5000001 -1.4999998 1.9999996 -2.5 -1.4999998 1.9999996 -0.49999973 -1.4999998 1.9999996 3.4999998 -1.4999998 1.9999996 3.4999998 -0.49999973 1.9999996 -0.49999973 -0.49999973 1.9999996 -2.5 -0.49999973 1.9999996 1.5 -0.49999973 1.9999996 1.5 0.5000001 1.9999996 -2.5 0.5000001 1.9999996 -2.5 -1.4999998 1.9999996 -1.4999998 -1.4999998 1.9999996 -1.4999998 -0.49999973 1.9999996 -2.5 -0.49999973 1.9999996 -1.4999998 0.5000001 1.9999996 -0.49999973 0.5000001 1.9999996 -0.49999973 1.5 1.9999996 -1.4999998 1.5 2.9999998 -1.4999998 -1.4999998 2.9999998 -0.49999973 -1.4999998 2.9999998 -0.49999973 -0.49999973 2.9999998 -1.4999998 -0.49999973 -1.0 -3.4999998 -0.49999973 0.9999998 -3.4999998 -0.49999973 0.9999998 -3.4999998 3.4999998 -1.0 -3.4999998 3.4999998 -1.0 -3.4999998 -3.4999998 0.9999998 -3.4999998 -3.4999998 0.9999998 -3.4999998 -1.4999998 -1.0 -3.4999998 -1.4999998 -2.0 -2.5 -3.4999998 -1.0 -2.5 -3.4999998 -1.0 -2.5 0.5000001 -2.0 -2.5 0.5000001 0.9999998 -2.5 -3.4999998 1.9999996 -2.5 -3.4999998 1.9999996 -2.5 0.5000001 0.9999998 -2.5 0.5000001 -1.0 -2.5 -1.4999998 0.9999998 -2.5 -1.4999998 0.9999998 -2.5 -0.49999973 -1.0 -2.5 -0.49999973 -2.9999998 -1.4999998 -1.4999998 -2.0 -1.4999998 -1.4999998 -2.0 -1.4999998 -0.49999973 -2.9999998 -1.4999998 -0.49999973 1.9999996 -1.4999998 -1.4999998 2.9999998 -1.4999998 -1.4999998 2.9999998 -1.4999998 -0.49999973 1.9999996 -1.4999998 -0.49999973 -2.0 -1.4999998 0.5000001 -1.0 -1.4999998 0.5000001 -1.0 -1.4999998 1.5 -2.0 -1.4999998 1.5 0.9999998 -1.4999998 0.5000001 1.9999996 -1.4999998 0.5000001 1.9999996 -1.4999998 1.5 0.9999998 -1.4999998 1.5 -1.0 -1.4999998 3.4999998 0.9999998 -1.4999998 3.4999998 0.9999998 -1.4999998 1.5 -1.0 -1.4999998 1.5 -2.9999998 -0.49999973 -0.49999973 -2.0 -0.49999973 -0.49999973 -2.0 -0.49999973 -1.4999998 -2.9999998 -0.49999973 -1.4999998 1.9999996 -0.49999973 -0.49999973 2.9999998 -0.49999973 -0.49999973 2.9999998 -0.49999973 -1.4999998 1.9999996 -0.49999973 -1.4999998 -2.0 -0.49999973 1.5 -1.0 -0.49999973 1.5 -1.0 -0.49999973 0.5000001 -2.0 -0.49999973 0.5000001 0.9999998 -0.49999973 1.5 1.9999996 -0.49999973 1.5 1.9999996 -0.49999973 0.5000001 0.9999998 -0.49999973 0.5000001 -2.0 0.5000001 -1.4999998 1.9999996 0.5000001 -1.4999998 1.9999996 0.5000001 -3.4999998 -2.0 0.5000001 -3.4999998 -1.0 0.5000001 1.5 0.9999998 0.5000001 1.5 0.9999998 0.5000001 -0.49999973 -1.0 0.5000001 -0.49999973 -1.0 1.5 -0.49999973 0.9999998 1.5 -0.49999973 0.9999998 1.5 -1.4999998 -1.0 1.5 -1.4999998 -2.0 1.5 0.5000001 -1.0 1.5 0.5000001 -1.0 1.5 -0.49999973 -2.0 1.5 -0.49999973 0.9999998 1.5 0.5000001 1.9999996 1.5 0.5000001 1.9999996 1.5 -0.49999973 0.9999998 1.5 -0.49999973 -2.0 3.4999998 -0.49999973 -1.0 3.4999998 -0.49999973 -1.0 3.4999998 -1.4999998 -2.0 3.4999998 -1.4999998 0.9999998 3.4999998 -0.49999973 1.9999996 3.4999998 -0.49999973 1.9999996 3.4999998 -1.4999998 0.9999998 3.4999998 -1.4999998 -2.0 0.5000001 -3.4999998 1.9999996 0.5000001 -3.4999998 1.9999996 -2.5 -3.4999998 -2.0 -2.5 -3.4999998 -1.0 -2.5 -3.4999998 0.9999998 -2.5 -3.4999998 0.9999998 -3.4999998 -3.4999998 -1.0 -3.4999998 -3.4999998 -2.0 1.5 -1.4999998 1.9999996 1.5 -1.4999998 1.9999996 0.5000001 -1.4999998 -2.0 0.5000001 -1.4999998 -2.0 3.4999998 -1.4999998 -1.0 3.4999998 -1.4999998 -1.0 1.5 -1.4999998 -2.0 1.5 -1.4999998 0.9999998 3.4999998 -1.4999998 1.9999996 3.4999998 -1.4999998 1.9999996 1.5 -1.4999998 0.9999998 1.5 -1.4999998 -2.9999998 -0.49999973 -1.4999998 -2.0 -0.49999973 -1.4999998 -2.0 -1.4999998 -1.4999998 -2.9999998 -1.4999998 -1.4999998 1.9999996 -0.49999973 -1.4999998 2.9999998 -0.49999973 -1.4999998 2.9999998 -1.4999998 -1.4999998 1.9999996 -1.4999998 -1.4999998 -1.0 -2.5 -0.49999973 0.9999998 -2.5 -0.49999973 0.9999998 -3.4999998 -0.49999973 -1.0 -3.4999998 -0.49999973 -1.0 -3.4999998 -1.4999998 0.9999998 -3.4999998 -1.4999998 0.9999998 -2.5 -1.4999998 -1.0 -2.5 -1.4999998 -1.0 0.5000001 -0.49999973 0.9999998 0.5000001 -0.49999973 0.9999998 1.5 -0.49999973 -1.0 1.5 -0.49999973 -2.0 1.5 -0.49999973 -1.0 1.5 -0.49999973 -1.0 3.4999998 -0.49999973 -2.0 3.4999998 -0.49999973 0.9999998 1.5 -0.49999973 1.9999996 1.5 -0.49999973 1.9999996 3.4999998 -0.49999973 0.9999998 3.4999998 -0.49999973 -2.9999998 -1.4999998 -0.49999973 -2.0 -1.4999998 -0.49999973 -2.0 -0.49999973 -0.49999973 -2.9999998 -0.49999973 -0.49999973 1.9999996 -1.4999998 -0.49999973 2.9999998 -1.4999998 -0.49999973 2.9999998 -0.49999973 -0.49999973 1.9999996 -0.49999973 -0.49999973 -2.0 -0.49999973 0.5000001 -1.0 -0.49999973 0.5000001 -1.0 1.5 0.5000001 -2.0 1.5 0.5000001 0.9999998 -0.49999973 0.5000001 1.9999996 -0.49999973 0.5000001 1.9999996 1.5 0.5000001 0.9999998 1.5 0.5000001 -2.0 -2.5 0.5000001 -1.0 -2.5 0.5000001 -1.0 -1.4999998 0.5000001 -2.0 -1.4999998 0.5000001 0.9999998 -2.5 0.5000001 1.9999996 -2.5 0.5000001 1.9999996 -1.4999998 0.5000001 0.9999998 -1.4999998 0.5000001 -2.0 -1.4999998 1.5 1.9999996 -1.4999998 1.5 1.9999996 -0.49999973 1.5 -2.0 -0.49999973 1.5 -1.0 -0.49999973 1.5 0.9999998 -0.49999973 1.5 0.9999998 0.5000001 1.5 -1.0 0.5000001 1.5 -1.0 -3.4999998 3.4999998 0.9999998 -3.4999998 3.4999998 0.9999998 -1.4999998 3.4999998 -1.0 -1.4999998 3.4999998 </float_array>
+          <technique_common>
+            <accessor count="264" source="#WolfHead-Pos-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfHead-UV">
+          <float_array count="528" id="WolfHead-UV-array">0.0 0.96875 0.03125 0.96875 0.03125 1.0 0.0 1.0 0.0625 0.8125 0.0625 0.90625 0.0 0.90625 0.0 0.8125 0.15625 0.78125 0.15625 0.90625 0.125 0.90625 0.125 0.78125 0.3125 0.875 0.3125 1.0 0.28125 1.0 0.28125 0.875 0.0 0.96875 0.03125 0.96875 0.03125 1.0 0.0 1.0 0.0 0.96875 0.03125 0.96875 0.03125 1.0 0.0 1.0 0.375 0.90625 0.4375 0.90625 0.4375 1.0 0.375 1.0 0.28125 0.9375 0.3125 0.9375 0.3125 1.0 0.28125 1.0 0.0 0.96875 0.03125 0.96875 0.03125 1.0 0.0 1.0 0.0 0.96875 0.03125 0.96875 0.03125 1.0 0.0 1.0 0.3125 0.9375 0.3125 1.0 0.28125 1.0 0.28125 0.9375 0.0 0.96875 0.03125 0.96875 0.03125 1.0 0.0 1.0 0.28125 0.9375 0.28125 1.0 0.3125 1.0 0.3125 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.96875 0.0 0.96875 0.0 0.71875 0.0625 0.71875 0.0625 0.625 0.0 0.625 0.28125 1.0 0.3125 1.0 0.3125 0.9375 0.28125 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.96875 0.0 0.96875 0.0 1.0 0.03125 1.0 0.03125 0.96875 0.0 0.96875 0.0 0.8125 0.0 0.90625 0.0625 0.90625 0.0625 0.8125 0.28125 0.875 0.28125 1.0 0.3125 1.0 0.3125 0.875 0.28125 0.875 0.28125 1.0 0.3125 1.0 0.3125 0.875 0.0 1.0 0.03125 1.0 0.03125 0.96875 0.0 0.96875 0.0 1.0 0.03125 1.0 0.03125 0.96875 0.0 0.96875 0.0 1.0 0.03125 1.0 0.03125 0.96875 0.0 0.96875 0.125 0.71875 0.1875 0.71875 0.1875 0.59375 0.125 0.59375 0.0 0.90625 0.0625 0.90625 0.0625 0.84375 0.0 0.84375 0.28125 1.0 0.3125 1.0 0.3125 0.875 0.28125 0.875 0.28125 1.0 0.3125 1.0 0.3125 0.875 0.28125 0.875 0.28125 0.9375 0.28125 1.0 0.3125 1.0 0.3125 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.96875 0.0 0.96875 0.0 1.0 0.03125 1.0 0.03125 0.96875 0.0 0.96875 0.0 1.0 0.03125 1.0 0.03125 0.96875 0.0 0.96875 0.0 1.0 0.03125 1.0 0.03125 0.96875 0.0 0.96875 0.375 0.78125 0.4375 0.78125 0.4375 0.84375 0.375 0.84375 0.0 0.96875 0.03125 0.96875 0.03125 1.0 0.0 1.0 0.0 0.96875 0.03125 0.96875 0.03125 1.0 0.0 1.0 0.0 0.96875 0.03125 0.96875 0.03125 1.0 0.0 1.0 0.0 0.96875 0.03125 0.96875 0.03125 1.0 0.0 1.0 0.1875 0.59375 0.1875 0.71875 0.125 0.71875 0.125 0.59375 0.0 0.84375 0.0625 0.84375 0.0625 0.90625 0.0 0.90625 0.3125 0.9375 0.3125 1.0 0.28125 1.0 0.28125 0.9375 0.0 0.96875 0.03125 0.96875 0.03125 1.0 0.0 1.0 0.0 0.96875 0.03125 0.96875 0.03125 1.0 0.0 1.0 0.0 0.96875 0.03125 0.96875 0.03125 1.0 0.0 1.0 0.0 0.96875 0.03125 0.96875 0.03125 1.0 0.0 1.0 0.375 0.59375 0.375 0.71875 0.28125 0.71875 0.28125 0.59375 0.3125 0.9375 0.3125 1.0 0.28125 1.0 0.28125 0.9375 0.3125 0.875 0.3125 1.0 0.28125 1.0 0.28125 0.875 0.28125 0.9375 0.3125 0.9375 0.3125 1.0 0.28125 1.0 0.28125 0.9375 0.3125 0.9375 0.3125 1.0 0.28125 1.0 0.0 0.96875 0.03125 0.96875 0.03125 1.0 0.0 1.0 0.0 0.96875 0.03125 0.96875 0.03125 1.0 0.0 1.0 0.3125 0.9375 0.3125 1.0 0.28125 1.0 0.28125 0.9375 0.28125 0.9375 0.28125 1.0 0.3125 1.0 0.3125 0.9375 0.28125 0.9375 0.28125 1.0 0.3125 1.0 0.3125 0.9375 0.28125 1.0 0.3125 1.0 0.3125 0.9375 0.28125 0.9375 0.28125 1.0 0.3125 1.0 0.3125 0.9375 0.28125 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.96875 0.0 0.96875 0.0 1.0 0.03125 1.0 0.03125 0.96875 0.0 0.96875 0.28125 1.0 0.3125 1.0 0.3125 0.9375 0.28125 0.9375 0.28125 1.0 0.3125 1.0 0.3125 0.9375 0.28125 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.96875 0.0 0.96875 0.0 1.0 0.03125 1.0 0.03125 0.96875 0.0 0.96875 0.4375 0.59375 0.4375 0.71875 0.46875 0.71875 0.46875 0.59375 0.28125 0.9375 0.28125 1.0 0.3125 1.0 0.3125 0.9375 0.0 0.5625 0.0625 0.5625 0.0625 0.5 0.0 0.5 </float_array>
+          <technique_common>
+            <accessor count="264" source="#WolfHead-UV-array" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfHead-Normal">
+          <float_array count="18" id="WolfHead-Normal-array">-1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0</float_array>
+          <technique_common>
+            <accessor count="6" source="#WolfHead-Normal-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="WolfHead-Vertices">
+          <input semantic="POSITION" source="#WolfHead-Pos"/>
+        </vertices>
+        <polylist count="66" material="WolfHead-Material">
+          <input offset="0" semantic="VERTEX" source="#WolfHead-Vertices"/>
+          <input offset="1" semantic="TEXCOORD" set="0" source="#WolfHead-UV"/>
+          <input offset="2" semantic="NORMAL" source="#WolfHead-Normal"/>
+          <vcount>4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 </vcount>
+          <p>0 0 0 1 1 0 2 2 0 3 3 0 4 4 0 5 5 0 6 6 0 7 7 0 8 8 0 9 9 0 10 10 0 11 11 0 12 12 0 13 13 0 14 14 0 15 15 0 16 16 0 17 17 0 18 18 0 19 19 0 20 20 0 21 21 0 22 22 0 23 23 0 24 24 0 25 25 0 26 26 0 27 27 0 28 28 0 29 29 0 30 30 0 31 31 0 32 32 0 33 33 0 34 34 0 35 35 0 36 36 0 37 37 0 38 38 0 39 39 0 40 40 0 41 41 0 42 42 0 43 43 0 44 44 0 45 45 0 46 46 0 47 47 0 48 48 1 49 49 1 50 50 1 51 51 1 52 52 1 53 53 1 54 54 1 55 55 1 56 56 1 57 57 1 58 58 1 59 59 1 60 60 1 61 61 1 62 62 1 63 63 1 64 64 1 65 65 1 66 66 1 67 67 1 68 68 1 69 69 1 70 70 1 71 71 1 72 72 1 73 73 1 74 74 1 75 75 1 76 76 1 77 77 1 78 78 1 79 79 1 80 80 1 81 81 1 82 82 1 83 83 1 84 84 1 85 85 1 86 86 1 87 87 1 88 88 1 89 89 1 90 90 1 91 91 1 92 92 1 93 93 1 94 94 1 95 95 1 96 96 2 97 97 2 98 98 2 99 99 2 100 100 2 101 101 2 102 102 2 103 103 2 104 104 2 105 105 2 106 106 2 107 107 2 108 108 2 109 109 2 110 110 2 111 111 2 112 112 2 113 113 2 114 114 2 115 115 2 116 116 2 117 117 2 118 118 2 119 119 2 120 120 2 121 121 2 122 122 2 123 123 2 124 124 2 125 125 2 126 126 2 127 127 2 128 128 2 129 129 2 130 130 2 131 131 2 132 132 3 133 133 3 134 134 3 135 135 3 136 136 3 137 137 3 138 138 3 139 139 3 140 140 3 141 141 3 142 142 3 143 143 3 144 144 3 145 145 3 146 146 3 147 147 3 148 148 3 149 149 3 150 150 3 151 151 3 152 152 3 153 153 3 154 154 3 155 155 3 156 156 3 157 157 3 158 158 3 159 159 3 160 160 3 161 161 3 162 162 3 163 163 3 164 164 3 165 165 3 166 166 3 167 167 3 168 168 3 169 169 3 170 170 3 171 171 3 172 172 3 173 173 3 174 174 3 175 175 3 176 176 3 177 177 3 178 178 3 179 179 3 180 180 4 181 181 4 182 182 4 183 183 4 184 184 4 185 185 4 186 186 4 187 187 4 188 188 4 189 189 4 190 190 4 191 191 4 192 192 4 193 193 4 194 194 4 195 195 4 196 196 4 197 197 4 198 198 4 199 199 4 200 200 4 201 201 4 202 202 4 203 203 4 204 204 4 205 205 4 206 206 4 207 207 4 208 208 4 209 209 4 210 210 4 211 211 4 212 212 5 213 213 5 214 214 5 215 215 5 216 216 5 217 217 5 218 218 5 219 219 5 220 220 5 221 221 5 222 222 5 223 223 5 224 224 5 225 225 5 226 226 5 227 227 5 228 228 5 229 229 5 230 230 5 231 231 5 232 232 5 233 233 5 234 234 5 235 235 5 236 236 5 237 237 5 238 238 5 239 239 5 240 240 5 241 241 5 242 242 5 243 243 5 244 244 5 245 245 5 246 246 5 247 247 5 248 248 5 249 249 5 250 250 5 251 251 5 252 252 5 253 253 5 254 254 5 255 255 5 256 256 5 257 257 5 258 258 5 259 259 5 260 260 5 261 261 5 262 262 5 263 263 5 </p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="WolfRightHand-Geom" name="WolfRightHand-Geom">
+      <mesh>
+        <source id="WolfRightHand-Pos">
+          <float_array count="72" id="WolfRightHand-Pos-array">-3.0 -0.5 0.5 -3.0 0.5 0.5 -3.0 0.5 -0.5 -3.0 -0.5 -0.5 3.0 -0.5 -0.5 3.0 0.5 -0.5 3.0 0.5 0.5 3.0 -0.5 0.5 -3.0 -0.5 -0.5 3.0 -0.5 -0.5 3.0 -0.5 0.5 -3.0 -0.5 0.5 -3.0 0.5 0.5 3.0 0.5 0.5 3.0 0.5 -0.5 -3.0 0.5 -0.5 -3.0 0.5 -0.5 3.0 0.5 -0.5 3.0 -0.5 -0.5 -3.0 -0.5 -0.5 -3.0 -0.5 0.5 3.0 -0.5 0.5 3.0 0.5 0.5 -3.0 0.5 0.5 </float_array>
+          <technique_common>
+            <accessor count="24" source="#WolfRightHand-Pos-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfRightHand-UV">
+          <float_array count="48" id="WolfRightHand-UV-array">0.0 0.875 0.0625 0.875 0.0625 1.0 0.0 1.0 0.0 1.0 0.0625 1.0 0.0625 0.875 0.0 0.875 0.5 0.25 0.5 1.0 0.5625 1.0 0.5625 0.25 0.5625 0.25 0.5625 1.0 0.5 1.0 0.5 0.25 0.5625 0.25 0.5625 1.0 0.5 1.0 0.5 0.25 0.5 0.25 0.5 1.0 0.5625 1.0 0.5625 0.25 </float_array>
+          <technique_common>
+            <accessor count="24" source="#WolfRightHand-UV-array" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfRightHand-Normal">
+          <float_array count="18" id="WolfRightHand-Normal-array">-1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0</float_array>
+          <technique_common>
+            <accessor count="6" source="#WolfRightHand-Normal-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="WolfRightHand-Vertices">
+          <input semantic="POSITION" source="#WolfRightHand-Pos"/>
+        </vertices>
+        <polylist count="6" material="WolfRightHand-Material">
+          <input offset="0" semantic="VERTEX" source="#WolfRightHand-Vertices"/>
+          <input offset="1" semantic="TEXCOORD" set="0" source="#WolfRightHand-UV"/>
+          <input offset="2" semantic="NORMAL" source="#WolfRightHand-Normal"/>
+          <vcount>4 4 4 4 4 4 </vcount>
+          <p>0 0 0 1 1 0 2 2 0 3 3 0 4 4 1 5 5 1 6 6 1 7 7 1 8 8 2 9 9 2 10 10 2 11 11 2 12 12 3 13 13 3 14 14 3 15 15 3 16 16 4 17 17 4 18 18 4 19 19 4 20 20 5 21 21 5 22 22 5 23 23 5 </p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="WolfLeftHand-Geom" name="WolfLeftHand-Geom">
+      <mesh>
+        <source id="WolfLeftHand-Pos">
+          <float_array count="72" id="WolfLeftHand-Pos-array">-3.0 -0.5 0.5 -3.0 0.5 0.5 -3.0 0.5 -0.5 -3.0 -0.5 -0.5 3.0 -0.5 -0.5 3.0 0.5 -0.5 3.0 0.5 0.5 3.0 -0.5 0.5 -3.0 -0.5 -0.5 3.0 -0.5 -0.5 3.0 -0.5 0.5 -3.0 -0.5 0.5 -3.0 0.5 0.5 3.0 0.5 0.5 3.0 0.5 -0.5 -3.0 0.5 -0.5 -3.0 0.5 -0.5 3.0 0.5 -0.5 3.0 -0.5 -0.5 -3.0 -0.5 -0.5 -3.0 -0.5 0.5 3.0 -0.5 0.5 3.0 0.5 0.5 -3.0 0.5 0.5 </float_array>
+          <technique_common>
+            <accessor count="24" source="#WolfLeftHand-Pos-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfLeftHand-UV">
+          <float_array count="48" id="WolfLeftHand-UV-array">0.0 0.875 0.0625 0.875 0.0625 1.0 0.0 1.0 0.0 1.0 0.0625 1.0 0.0625 0.875 0.0 0.875 0.5 0.25 0.5 1.0 0.5625 1.0 0.5625 0.25 0.5625 0.25 0.5625 1.0 0.5 1.0 0.5 0.25 0.5625 0.25 0.5625 1.0 0.5 1.0 0.5 0.25 0.5 0.25 0.5 1.0 0.5625 1.0 0.5625 0.25 </float_array>
+          <technique_common>
+            <accessor count="24" source="#WolfLeftHand-UV-array" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfLeftHand-Normal">
+          <float_array count="18" id="WolfLeftHand-Normal-array">-1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0</float_array>
+          <technique_common>
+            <accessor count="6" source="#WolfLeftHand-Normal-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="WolfLeftHand-Vertices">
+          <input semantic="POSITION" source="#WolfLeftHand-Pos"/>
+        </vertices>
+        <polylist count="6" material="WolfLeftHand-Material">
+          <input offset="0" semantic="VERTEX" source="#WolfLeftHand-Vertices"/>
+          <input offset="1" semantic="TEXCOORD" set="0" source="#WolfLeftHand-UV"/>
+          <input offset="2" semantic="NORMAL" source="#WolfLeftHand-Normal"/>
+          <vcount>4 4 4 4 4 4 </vcount>
+          <p>0 0 0 1 1 0 2 2 0 3 3 0 4 4 1 5 5 1 6 6 1 7 7 1 8 8 2 9 9 2 10 10 2 11 11 2 12 12 3 13 13 3 14 14 3 15 15 3 16 16 4 17 17 4 18 18 4 19 19 4 20 20 5 21 21 5 22 22 5 23 23 5 </p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="WolfRightFoot-Geom" name="WolfRightFoot-Geom">
+      <mesh>
+        <source id="WolfRightFoot-Pos">
+          <float_array count="120" id="WolfRightFoot-Pos-array">-0.5 -2.0 -0.5 -0.5 2.0 -0.5 -0.5 2.0 -1.5 -0.5 -2.0 -1.5 -0.5 -2.0 1.5 -0.5 -1.0 1.5 -0.5 -1.0 -0.5 -0.5 -2.0 -0.5 0.5 -2.0 -1.5 0.5 2.0 -1.5 0.5 2.0 -0.5 0.5 -2.0 -0.5 0.5 -2.0 -0.5 0.5 -1.0 -0.5 0.5 -1.0 1.5 0.5 -2.0 1.5 -0.5 -2.0 -1.5 0.5 -2.0 -1.5 0.5 -2.0 1.5 -0.5 -2.0 1.5 -0.5 -1.0 1.5 0.5 -1.0 1.5 0.5 -1.0 -0.5 -0.5 -1.0 -0.5 -0.5 2.0 -0.5 0.5 2.0 -0.5 0.5 2.0 -1.5 -0.5 2.0 -1.5 -0.5 2.0 -1.5 0.5 2.0 -1.5 0.5 -2.0 -1.5 -0.5 -2.0 -1.5 -0.5 -1.0 -0.5 0.5 -1.0 -0.5 0.5 2.0 -0.5 -0.5 2.0 -0.5 -0.5 -2.0 1.5 0.5 -2.0 1.5 0.5 -1.0 1.5 -0.5 -1.0 1.5 </float_array>
+          <technique_common>
+            <accessor count="40" source="#WolfRightFoot-Pos-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfRightFoot-UV">
+          <float_array count="80" id="WolfRightFoot-UV-array">0.125 0.5 0.125 1.0 0.0 1.0 0.0 0.5 0.0 0.75 0.125 0.75 0.125 1.0 0.0 1.0 0.0 0.5 0.0 1.0 0.125 1.0 0.125 0.5 0.0 1.0 0.125 1.0 0.125 0.75 0.0 0.75 0.0 1.0 0.125 1.0 0.125 0.625 0.0 0.625 0.0 0.75 0.125 0.75 0.125 1.0 0.0 1.0 0.0 0.875 0.125 0.875 0.125 1.0 0.0 1.0 0.0 0.5 0.125 0.5 0.125 1.0 0.0 1.0 0.0 1.0 0.125 1.0 0.125 0.625 0.0 0.625 0.0 1.0 0.125 1.0 0.125 0.875 0.0 0.875 </float_array>
+          <technique_common>
+            <accessor count="40" source="#WolfRightFoot-UV-array" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfRightFoot-Normal">
+          <float_array count="18" id="WolfRightFoot-Normal-array">-1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0</float_array>
+          <technique_common>
+            <accessor count="6" source="#WolfRightFoot-Normal-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="WolfRightFoot-Vertices">
+          <input semantic="POSITION" source="#WolfRightFoot-Pos"/>
+        </vertices>
+        <polylist count="10" material="WolfRightFoot-Material">
+          <input offset="0" semantic="VERTEX" source="#WolfRightFoot-Vertices"/>
+          <input offset="1" semantic="TEXCOORD" set="0" source="#WolfRightFoot-UV"/>
+          <input offset="2" semantic="NORMAL" source="#WolfRightFoot-Normal"/>
+          <vcount>4 4 4 4 4 4 4 4 4 4 </vcount>
+          <p>0 0 0 1 1 0 2 2 0 3 3 0 4 4 0 5 5 0 6 6 0 7 7 0 8 8 1 9 9 1 10 10 1 11 11 1 12 12 1 13 13 1 14 14 1 15 15 1 16 16 2 17 17 2 18 18 2 19 19 2 20 20 3 21 21 3 22 22 3 23 23 3 24 24 3 25 25 3 26 26 3 27 27 3 28 28 4 29 29 4 30 30 4 31 31 4 32 32 5 33 33 5 34 34 5 35 35 5 36 36 5 37 37 5 38 38 5 39 39 5 </p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="WolfLeftFoot-Geom" name="WolfLeftFoot-Geom">
+      <mesh>
+        <source id="WolfLeftFoot-Pos">
+          <float_array count="120" id="WolfLeftFoot-Pos-array">-0.5 -2.0 -0.5 -0.5 2.0 -0.5 -0.5 2.0 -1.5 -0.5 -2.0 -1.5 -0.5 -2.0 1.5 -0.5 -1.0 1.5 -0.5 -1.0 -0.5 -0.5 -2.0 -0.5 0.5 -2.0 -1.5 0.5 2.0 -1.5 0.5 2.0 -0.5 0.5 -2.0 -0.5 0.5 -2.0 -0.5 0.5 -1.0 -0.5 0.5 -1.0 1.5 0.5 -2.0 1.5 -0.5 -2.0 -1.5 0.5 -2.0 -1.5 0.5 -2.0 1.5 -0.5 -2.0 1.5 -0.5 -1.0 1.5 0.5 -1.0 1.5 0.5 -1.0 -0.5 -0.5 -1.0 -0.5 -0.5 2.0 -0.5 0.5 2.0 -0.5 0.5 2.0 -1.5 -0.5 2.0 -1.5 -0.5 2.0 -1.5 0.5 2.0 -1.5 0.5 -2.0 -1.5 -0.5 -2.0 -1.5 -0.5 -1.0 -0.5 0.5 -1.0 -0.5 0.5 2.0 -0.5 -0.5 2.0 -0.5 -0.5 -2.0 1.5 0.5 -2.0 1.5 0.5 -1.0 1.5 -0.5 -1.0 1.5 </float_array>
+          <technique_common>
+            <accessor count="40" source="#WolfLeftFoot-Pos-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfLeftFoot-UV">
+          <float_array count="80" id="WolfLeftFoot-UV-array">0.125 0.5 0.125 1.0 0.0 1.0 0.0 0.5 0.0 0.75 0.125 0.75 0.125 1.0 0.0 1.0 0.0 0.5 0.0 1.0 0.125 1.0 0.125 0.5 0.0 1.0 0.125 1.0 0.125 0.75 0.0 0.75 0.0 1.0 0.125 1.0 0.125 0.625 0.0 0.625 0.0 0.75 0.125 0.75 0.125 1.0 0.0 1.0 0.0 0.875 0.125 0.875 0.125 1.0 0.0 1.0 0.0 0.5 0.125 0.5 0.125 1.0 0.0 1.0 0.0 1.0 0.125 1.0 0.125 0.625 0.0 0.625 0.0 1.0 0.125 1.0 0.125 0.875 0.0 0.875 </float_array>
+          <technique_common>
+            <accessor count="40" source="#WolfLeftFoot-UV-array" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfLeftFoot-Normal">
+          <float_array count="18" id="WolfLeftFoot-Normal-array">-1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0</float_array>
+          <technique_common>
+            <accessor count="6" source="#WolfLeftFoot-Normal-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="WolfLeftFoot-Vertices">
+          <input semantic="POSITION" source="#WolfLeftFoot-Pos"/>
+        </vertices>
+        <polylist count="10" material="WolfLeftFoot-Material">
+          <input offset="0" semantic="VERTEX" source="#WolfLeftFoot-Vertices"/>
+          <input offset="1" semantic="TEXCOORD" set="0" source="#WolfLeftFoot-UV"/>
+          <input offset="2" semantic="NORMAL" source="#WolfLeftFoot-Normal"/>
+          <vcount>4 4 4 4 4 4 4 4 4 4 </vcount>
+          <p>0 0 0 1 1 0 2 2 0 3 3 0 4 4 0 5 5 0 6 6 0 7 7 0 8 8 1 9 9 1 10 10 1 11 11 1 12 12 1 13 13 1 14 14 1 15 15 1 16 16 2 17 17 2 18 18 2 19 19 2 20 20 3 21 21 3 22 22 3 23 23 3 24 24 3 25 25 3 26 26 3 27 27 3 28 28 4 29 29 4 30 30 4 31 31 4 32 32 5 33 33 5 34 34 5 35 35 5 36 36 5 37 37 5 38 38 5 39 39 5 </p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_animations>
+    <animation id="Wolf-global-anim" name="Wolf-global-anim">
+      <animation>
+        <source id="Wolf-global-anim-inSource-TIME">
+          <float_array count="61" id="Wolf-global-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 1.0416666 1.0833334 1.125 1.1666666 1.2083334 1.25 1.2916666 1.3333334 1.375 1.4166666 1.4583334 1.5 1.5416666 1.5833334 1.625 1.6666666 1.7083334 1.75 1.7916666 1.8333334 1.875 1.9166666 1.9583334 2.0 2.0416667 2.0833333 2.125 2.1666667 2.2083333 2.25 2.2916667 2.3333333 2.375 2.4166667 2.4583333 2.5 </float_array>
+          <technique_common>
+            <accessor count="61" source="#Wolf-global-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Wolf-global-anim-interpolation">
+          <Name_array count="61" id="Wolf-global-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="61" source="#Wolf-global-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Wolf-global-anim-outSource-global">
+          <float_array count="976" id="Wolf-global-anim-outSource-global-array">1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="61" source="#Wolf-global-anim-outSource-global-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="Wolf-global-anim-globalSampler">
+          <input semantic="INPUT" source="#Wolf-global-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#Wolf-global-anim-outSource-global"/>
+          <input semantic="INTERPOLATION" source="#Wolf-global-anim-interpolation"/>
+        </sampler>
+        <channel source="#Wolf-global-anim-globalSampler" target="Wolf-global/matrix"/>
+      </animation>
+    </animation>
+    <animation id="Wolf-local-anim" name="Wolf-local-anim">
+      <animation>
+        <source id="Wolf-local-anim-inSource-TIME">
+          <float_array count="61" id="Wolf-local-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 1.0416666 1.0833334 1.125 1.1666666 1.2083334 1.25 1.2916666 1.3333334 1.375 1.4166666 1.4583334 1.5 1.5416666 1.5833334 1.625 1.6666666 1.7083334 1.75 1.7916666 1.8333334 1.875 1.9166666 1.9583334 2.0 2.0416667 2.0833333 2.125 2.1666667 2.2083333 2.25 2.2916667 2.3333333 2.375 2.4166667 2.4583333 2.5 </float_array>
+          <technique_common>
+            <accessor count="61" source="#Wolf-local-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Wolf-local-anim-interpolation">
+          <Name_array count="61" id="Wolf-local-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="61" source="#Wolf-local-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Wolf-local-anim-outSource-local">
+          <float_array count="976" id="Wolf-local-anim-outSource-local-array">1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="61" source="#Wolf-local-anim-outSource-local-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="Wolf-local-anim-localSampler">
+          <input semantic="INPUT" source="#Wolf-local-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#Wolf-local-anim-outSource-local"/>
+          <input semantic="INTERPOLATION" source="#Wolf-local-anim-interpolation"/>
+        </sampler>
+        <channel source="#Wolf-local-anim-localSampler" target="Wolf-local/matrix"/>
+      </animation>
+    </animation>
+    <animation id="WolfBody-global-anim" name="WolfBody-global-anim">
+      <animation>
+        <source id="WolfBody-global-anim-inSource-TIME">
+          <float_array count="61" id="WolfBody-global-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 1.0416666 1.0833334 1.125 1.1666666 1.2083334 1.25 1.2916666 1.3333334 1.375 1.4166666 1.4583334 1.5 1.5416666 1.5833334 1.625 1.6666666 1.7083334 1.75 1.7916666 1.8333334 1.875 1.9166666 1.9583334 2.0 2.0416667 2.0833333 2.125 2.1666667 2.2083333 2.25 2.2916667 2.3333333 2.375 2.4166667 2.4583333 2.5 </float_array>
+          <technique_common>
+            <accessor count="61" source="#WolfBody-global-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfBody-global-anim-interpolation">
+          <Name_array count="61" id="WolfBody-global-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="61" source="#WolfBody-global-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfBody-global-anim-outSource-global">
+          <float_array count="976" id="WolfBody-global-anim-outSource-global-array">1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="61" source="#WolfBody-global-anim-outSource-global-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="WolfBody-global-anim-globalSampler">
+          <input semantic="INPUT" source="#WolfBody-global-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#WolfBody-global-anim-outSource-global"/>
+          <input semantic="INTERPOLATION" source="#WolfBody-global-anim-interpolation"/>
+        </sampler>
+        <channel source="#WolfBody-global-anim-globalSampler" target="WolfBody-global/matrix"/>
+      </animation>
+    </animation>
+    <animation id="WolfBody-local-anim" name="WolfBody-local-anim">
+      <animation>
+        <source id="WolfBody-local-anim-inSource-TIME">
+          <float_array count="61" id="WolfBody-local-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 1.0416666 1.0833334 1.125 1.1666666 1.2083334 1.25 1.2916666 1.3333334 1.375 1.4166666 1.4583334 1.5 1.5416666 1.5833334 1.625 1.6666666 1.7083334 1.75 1.7916666 1.8333334 1.875 1.9166666 1.9583334 2.0 2.0416667 2.0833333 2.125 2.1666667 2.2083333 2.25 2.2916667 2.3333333 2.375 2.4166667 2.4583333 2.5 </float_array>
+          <technique_common>
+            <accessor count="61" source="#WolfBody-local-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfBody-local-anim-interpolation">
+          <Name_array count="61" id="WolfBody-local-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="61" source="#WolfBody-local-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfBody-local-anim-outSource-local">
+          <float_array count="976" id="WolfBody-local-anim-outSource-local-array">1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="61" source="#WolfBody-local-anim-outSource-local-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="WolfBody-local-anim-localSampler">
+          <input semantic="INPUT" source="#WolfBody-local-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#WolfBody-local-anim-outSource-local"/>
+          <input semantic="INTERPOLATION" source="#WolfBody-local-anim-interpolation"/>
+        </sampler>
+        <channel source="#WolfBody-local-anim-localSampler" target="WolfBody-local/matrix"/>
+      </animation>
+    </animation>
+    <animation id="WolfHead-global-anim" name="WolfHead-global-anim">
+      <animation>
+        <source id="WolfHead-global-anim-inSource-TIME">
+          <float_array count="61" id="WolfHead-global-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 1.0416666 1.0833334 1.125 1.1666666 1.2083334 1.25 1.2916666 1.3333334 1.375 1.4166666 1.4583334 1.5 1.5416666 1.5833334 1.625 1.6666666 1.7083334 1.75 1.7916666 1.8333334 1.875 1.9166666 1.9583334 2.0 2.0416667 2.0833333 2.125 2.1666667 2.2083333 2.25 2.2916667 2.3333333 2.375 2.4166667 2.4583333 2.5 </float_array>
+          <technique_common>
+            <accessor count="61" source="#WolfHead-global-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfHead-global-anim-interpolation">
+          <Name_array count="61" id="WolfHead-global-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="61" source="#WolfHead-global-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfHead-global-anim-outSource-global">
+          <float_array count="976" id="WolfHead-global-anim-outSource-global-array">1.0 0.0 0.0 0.0 0.0 1.0 0.0 6.33646 0.0 0.0 1.0 1.2754269 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.9999866 0.0051850444 6.33646 0.0 -0.0051850444 0.9999866 1.2754269 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 0.0 0.0 0.9999463 0.010369949 6.33646 0.0 -0.010369949 0.9999463 1.2754269 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.99987906 0.015554575 6.33646 0.0 -0.015554575 0.99987906 1.2754269 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.99978495 0.02073878 6.33646 0.0 -0.02073878 0.99978495 1.2754269 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 0.0 0.0 0.9996641 0.025922434 6.33646 0.0 -0.025922434 0.9996641 1.2754269 0.0 0.0 0.0 1.0 0.99999994 0.0 0.0 0.0 0.0 0.99951607 0.031105382 6.33646 0.0 -0.031105382 0.99951607 1.2754269 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.9993414 0.0362875 6.33646 0.0 -0.0362875 0.9993414 1.2754269 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 0.0 0.0 0.99913996 0.04146865 6.33646 0.0 -0.04146865 0.99913996 1.2754269 0.0 0.0 0.0 1.0 0.99999994 0.0 0.0 0.0 0.0 0.9989113 0.046648663 6.33646 0.0 -0.046648663 0.9989113 1.2754269 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.99865603 0.051827434 6.33646 0.0 -0.051827434 0.99865603 1.2754269 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 0.0 0.0 0.998374 0.05700482 6.33646 0.0 -0.05700482 0.998374 1.2754269 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 0.0 0.0 0.99806505 0.062180676 6.33646 0.0 -0.062180676 0.99806505 1.2754269 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 0.0 0.0 0.99772924 0.06735485 6.33646 0.0 -0.06735485 0.99772924 1.2754269 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 0.0 0.0 0.9973666 0.072527215 6.33646 0.0 -0.072527215 0.9973666 1.2754269 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 0.0 0.0 0.9975978 0.06927346 6.33646 0.0 -0.06927346 0.9975978 1.2754269 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.99781835 0.06601897 6.33646 0.0 -0.06601897 0.99781835 1.2754269 0.0 0.0 0.0 1.0 0.99999994 0.0 0.0 0.0 0.0 0.99998003 0.0063190563 6.33646 0.0 -0.0063190563 0.99998003 1.2754269 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.99857306 -0.05340341 6.33646 0.0 0.05340341 0.99857306 1.2754269 0.0 0.0 0.0 1.0 0.9999209 -1.1641532E-10 -0.012593437 0.0 -6.7253236E-4 0.9985732 -0.053399187 6.33646 0.012575466 0.05340342 0.998494 1.2754269 0.0 0.0 0.0 1.0 0.99968284 -1.7462298E-10 -0.025184872 0.0 -0.0013449579 0.99857306 -0.05338647 6.33646 0.025148934 0.05340341 0.9982563 1.2754269 0.0 0.0 0.0 1.0 0.9992866 -2.3283064E-10 -0.037772316 0.0 -0.0020171702 0.99857324 -0.05336531 6.33646 0.03771842 0.05340342 0.9978606 1.2754269 0.0 0.0 0.0 1.0 0.99873155 -3.4924597E-10 -0.05035376 0.0 -0.0026890622 0.9985731 -0.053335663 6.33646 0.05028191 0.05340341 0.9973064 1.2754269 0.0 0.0 0.0 1.0 0.9980181 -4.656613E-10 -0.06292723 0.0 -0.0033605283 0.998573 -0.053297568 6.33646 0.06283744 0.05340341 0.99659395 1.2754269 0.0 0.0 0.0 1.0 0.99714655 -4.656613E-10 -0.075490706 0.0 -0.0040314603 0.99857306 -0.053251024 6.33646 0.075382985 0.05340341 0.99572366 1.2754269 0.0 0.0 0.0 1.0 0.99611676 -6.9849193E-10 -0.08804222 0.0 -0.004701754 0.998573 -0.053196028 6.33646 0.08791659 0.053403407 0.9946953 1.2754269 0.0 0.0 0.0 1.0 0.994929 -2.3283064E-10 -0.100579776 0.0 -0.0053713014 0.99857306 -0.053132597 6.33646 0.10043625 0.053403404 0.9935093 1.2754269 0.0 0.0 0.0 1.0 0.9935836 -2.3283064E-10 -0.11310136 0.0 -0.0060399976 0.9985732 -0.053060744 6.33646 0.11293997 0.05340341 0.9921658 1.2754269 0.0 0.0 0.0 1.0 0.99208045 -4.656613E-10 -0.12560503 0.0 -0.006707736 0.9985731 -0.052980468 6.33646 0.1254258 0.053403407 0.9906648 1.2754269 0.0 0.0 0.0 1.0 0.99041986 -4.656613E-10 -0.13808875 0.0 -0.007374408 0.998573 -0.05289179 6.33646 0.1378917 0.0534034 0.9890066 1.2754269 0.0 0.0 0.0 1.0 0.9886023 0.0 -0.15055057 0.0 -0.008039912 0.998573 -0.052794725 6.33646 0.15033573 0.0534034 0.9871916 1.2754269 0.0 0.0 0.0 1.0 0.98662794 -4.656613E-10 -0.16298853 0.0 -0.008704141 0.99857295 -0.052689284 6.33646 0.16275595 0.0534034 0.98522 1.2754269 0.0 0.0 0.0 1.0 0.98449725 -4.656613E-10 -0.17540067 0.0 -0.009366993 0.9985731 -0.052575503 6.33646 0.1751504 0.05340341 0.9830924 1.2754269 0.0 0.0 0.0 1.0 0.9844973 0.004193332 -0.17535055 0.0 -0.009366994 0.9995447 -0.028687436 6.33646 0.1751504 0.029885206 0.9840882 1.2754269 0.0 0.0 0.0 1.0 0.98449713 0.008384266 -0.1752002 0.0 -0.009366994 0.99994475 -0.004782964 6.33646 0.1751504 0.0063499133 0.98452127 1.2754269 0.0 0.0 0.0 1.0 0.9844972 0.0032242236 -0.17537107 0.0 -0.009366996 0.9993708 -0.03421081 6.33646 0.17515041 0.035323143 0.98390794 1.2754269 0.0 0.0 0.0 1.0 0.9844973 -0.0019386145 -0.17539003 0.0 -0.009366998 0.9979311 -0.06360902 6.33646 0.17515045 0.06426577 0.98244214 1.2754269 0.0 0.0 0.0 1.0 0.9844972 8.188663E-4 -0.17539883 0.0 -0.009366998 0.99880767 -0.047913056 6.33646 0.17515045 0.048813228 0.98333097 1.2754269 0.0 0.0 0.0 1.0 0.9844971 0.0035761434 -0.17536427 0.0 -0.009366997 0.99943733 -0.032205243 6.33646 0.17515044 0.03334861 0.98397666 1.2754269 0.0 0.0 0.0 1.0 0.9925364 0.003576144 -0.12189735 0.0 -0.00761266 0.9994376 -0.03266445 6.33646 0.12171195 0.033348616 0.9920053 1.2754269 0.0 0.0 0.0 1.0 0.9976738 0.0035761432 -0.068074 0.0 -0.0058360654 0.9994373 -0.033028148 6.33646 0.067917585 0.033348605 0.9971333 1.2754269 0.0 0.0 0.0 1.0 0.9998949 0.0035761434 -0.014051692 0.0 -0.0040424117 0.9994374 -0.03329531 6.33646 0.013924717 0.033348612 0.9993468 1.2754269 0.0 0.0 0.0 1.0 0.9991929 0.0035761436 0.04001172 0.0 -0.00223694 0.99943745 -0.03346513 6.33646 -0.040108882 0.03334861 0.99863875 1.2754269 0.0 0.0 0.0 1.0 0.99556977 0.0035761432 0.09395813 0.0 -4.2492908E-4 0.9994374 -0.033537116 6.33646 -0.0940252 0.03334861 0.99501115 1.2754269 0.0 0.0 0.0 1.0 0.9890362 0.0035761427 0.14762987 0.0 0.0013883236 0.99943733 -0.033511057 6.33646 -0.14766665 0.033348605 0.9884748 1.2754269 0.0 0.0 0.0 1.0 0.9796115 0.0035761436 0.20087007 0.0 0.0031975186 0.9994376 -0.033387046 6.33646 -0.20087644 0.033348616 0.97904897 1.2754269 0.0 0.0 0.0 1.0 0.9673229 0.0035761434 0.25352305 0.0 0.004997367 0.9994375 -0.03316542 6.33646 -0.25349903 0.033348616 0.96676075 1.2754269 0.0 0.0 0.0 1.0 0.9522064 0.0035761427 0.30543482 0.0 0.0067826044 0.99943745 -0.032846846 6.33646 -0.30538046 0.033348612 0.9516464 1.2754269 0.0 0.0 0.0 1.0 0.93430626 0.0035761413 0.35645372 0.0 0.008548016 0.9994375 -0.032432243 6.33646 -0.35636914 0.033348612 0.93375003 1.2754269 0.0 0.0 0.0 1.0 0.93430626 -0.035799056 0.35466957 0.0 0.008548014 0.99690855 0.078106284 6.33646 -0.3563692 -0.06994346 0.9317238 1.2754269 0.0 0.0 0.0 1.0 0.97965246 -0.019290619 0.1997731 0.0 0.021176647 0.99974924 -0.0073081674 6.33646 -0.19958198 0.011389987 0.9798151 1.2754269 0.0 0.0 0.0 1.0 0.97965235 -0.03633985 0.19738495 0.0 0.02117665 0.9966974 0.07839545 6.33646 -0.19958195 -0.072620325 0.9771865 1.2754269 0.0 0.0 0.0 1.0 0.9839099 -0.03160005 0.17585002 0.0 0.01960946 0.99738866 0.069511436 6.33646 -0.17758735 -0.06494465 0.98196 1.2754269 0.0 0.0 0.0 1.0 0.987672 -0.027029954 0.15418653 0.0 0.017843049 0.9979991 0.06065894 6.33646 -0.15551762 -0.057159975 0.986178 1.2754269 0.0 0.0 0.0 1.0 0.99093723 -0.02263223 0.13240705 0.0 0.01587845 0.9985292 0.051843114 6.33646 -0.13338561 -0.04927084 0.9898389 1.2754269 0.0 0.0 0.0 1.0 0.993703 -0.018409384 0.1105241 0.0 0.013716784 0.998978 0.043068983 6.33646 -0.11120401 -0.041281737 0.9929399 1.2754269 0.0 0.0 0.0 1.0 0.9959682 -0.014363862 0.088550285 0.0 0.0113592995 0.9993457 0.03434163 6.33646 -0.08898562 -0.033197302 0.99547964 1.2754269 0.0 0.0 0.0 1.0 0.99773127 -0.010497988 0.06649825 0.0 0.008807355 0.99963176 0.02566608 6.33646 -0.06674321 -0.025022179 0.9974564 1.2754269 0.0 0.0 0.0 1.0 0.9989915 -0.0068139895 0.044380687 0.0 0.006062417 0.9998363 0.017047321 6.33646 -0.044489585 -0.016761074 0.99886924 1.2754269 0.0 0.0 0.0 1.0 0.999748 -0.0033139898 0.022210358 0.0 0.0031260694 0.9999593 0.00849032 6.33646 -0.022237586 -0.008418748 0.9997175 1.2754269 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 6.33646 0.0 0.0 1.0 1.2754269 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="61" source="#WolfHead-global-anim-outSource-global-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="WolfHead-global-anim-globalSampler">
+          <input semantic="INPUT" source="#WolfHead-global-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#WolfHead-global-anim-outSource-global"/>
+          <input semantic="INTERPOLATION" source="#WolfHead-global-anim-interpolation"/>
+        </sampler>
+        <channel source="#WolfHead-global-anim-globalSampler" target="WolfHead-global/matrix"/>
+      </animation>
+    </animation>
+    <animation id="WolfHead-local-anim" name="WolfHead-local-anim">
+      <animation>
+        <source id="WolfHead-local-anim-inSource-TIME">
+          <float_array count="61" id="WolfHead-local-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 1.0416666 1.0833334 1.125 1.1666666 1.2083334 1.25 1.2916666 1.3333334 1.375 1.4166666 1.4583334 1.5 1.5416666 1.5833334 1.625 1.6666666 1.7083334 1.75 1.7916666 1.8333334 1.875 1.9166666 1.9583334 2.0 2.0416667 2.0833333 2.125 2.1666667 2.2083333 2.25 2.2916667 2.3333333 2.375 2.4166667 2.4583333 2.5 </float_array>
+          <technique_common>
+            <accessor count="61" source="#WolfHead-local-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfHead-local-anim-interpolation">
+          <Name_array count="61" id="WolfHead-local-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="61" source="#WolfHead-local-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfHead-local-anim-outSource-local">
+          <float_array count="976" id="WolfHead-local-anim-outSource-local-array">1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="61" source="#WolfHead-local-anim-outSource-local-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="WolfHead-local-anim-localSampler">
+          <input semantic="INPUT" source="#WolfHead-local-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#WolfHead-local-anim-outSource-local"/>
+          <input semantic="INTERPOLATION" source="#WolfHead-local-anim-interpolation"/>
+        </sampler>
+        <channel source="#WolfHead-local-anim-localSampler" target="WolfHead-local/matrix"/>
+      </animation>
+    </animation>
+    <animation id="WolfRightHand-global-anim" name="WolfRightHand-global-anim">
+      <animation>
+        <source id="WolfRightHand-global-anim-inSource-TIME">
+          <float_array count="1" id="WolfRightHand-global-anim-inSource-TIME-array">0.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#WolfRightHand-global-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfRightHand-global-anim-interpolation">
+          <Name_array count="1" id="WolfRightHand-global-anim-interpolation-array">LINEAR </Name_array>
+          <technique_common>
+            <accessor count="1" source="#WolfRightHand-global-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfRightHand-global-anim-outSource-global">
+          <float_array count="16" id="WolfRightHand-global-anim-outSource-global-array">0.2207773 -0.9753242 0.0 -1.7450442 0.9753242 0.2207773 0.0 5.881599 0.0 0.0 1.0 1.4682372 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#WolfRightHand-global-anim-outSource-global-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="WolfRightHand-global-anim-globalSampler">
+          <input semantic="INPUT" source="#WolfRightHand-global-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#WolfRightHand-global-anim-outSource-global"/>
+          <input semantic="INTERPOLATION" source="#WolfRightHand-global-anim-interpolation"/>
+        </sampler>
+        <channel source="#WolfRightHand-global-anim-globalSampler" target="WolfRightHand-global/matrix"/>
+      </animation>
+    </animation>
+    <animation id="WolfRightHand-local-anim" name="WolfRightHand-local-anim">
+      <animation>
+        <source id="WolfRightHand-local-anim-inSource-TIME">
+          <float_array count="1" id="WolfRightHand-local-anim-inSource-TIME-array">0.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#WolfRightHand-local-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfRightHand-local-anim-interpolation">
+          <Name_array count="1" id="WolfRightHand-local-anim-interpolation-array">LINEAR </Name_array>
+          <technique_common>
+            <accessor count="1" source="#WolfRightHand-local-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfRightHand-local-anim-outSource-local">
+          <float_array count="16" id="WolfRightHand-local-anim-outSource-local-array">1.0 0.0 0.0 -2.9668972 0.0 1.0 0.0 -0.027064383 0.0 0.0 1.0 0.004058987 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#WolfRightHand-local-anim-outSource-local-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="WolfRightHand-local-anim-localSampler">
+          <input semantic="INPUT" source="#WolfRightHand-local-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#WolfRightHand-local-anim-outSource-local"/>
+          <input semantic="INTERPOLATION" source="#WolfRightHand-local-anim-interpolation"/>
+        </sampler>
+        <channel source="#WolfRightHand-local-anim-localSampler" target="WolfRightHand-local/matrix"/>
+      </animation>
+    </animation>
+    <animation id="WolfLeftHand-global-anim" name="WolfLeftHand-global-anim">
+      <animation>
+        <source id="WolfLeftHand-global-anim-inSource-TIME">
+          <float_array count="1" id="WolfLeftHand-global-anim-inSource-TIME-array">0.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#WolfLeftHand-global-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfLeftHand-global-anim-interpolation">
+          <Name_array count="1" id="WolfLeftHand-global-anim-interpolation-array">LINEAR </Name_array>
+          <technique_common>
+            <accessor count="1" source="#WolfLeftHand-global-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfLeftHand-global-anim-outSource-global">
+          <float_array count="16" id="WolfLeftHand-global-anim-outSource-global-array">0.24808538 0.96873814 0.0 1.9668088 -0.96873814 0.24808538 0.0 5.5938463 0.0 0.0 1.0 1.0974029 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#WolfLeftHand-global-anim-outSource-global-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="WolfLeftHand-global-anim-globalSampler">
+          <input semantic="INPUT" source="#WolfLeftHand-global-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#WolfLeftHand-global-anim-outSource-global"/>
+          <input semantic="INTERPOLATION" source="#WolfLeftHand-global-anim-interpolation"/>
+        </sampler>
+        <channel source="#WolfLeftHand-global-anim-globalSampler" target="WolfLeftHand-global/matrix"/>
+      </animation>
+    </animation>
+    <animation id="WolfLeftHand-local-anim" name="WolfLeftHand-local-anim">
+      <animation>
+        <source id="WolfLeftHand-local-anim-inSource-TIME">
+          <float_array count="1" id="WolfLeftHand-local-anim-inSource-TIME-array">0.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#WolfLeftHand-local-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfLeftHand-local-anim-interpolation">
+          <Name_array count="1" id="WolfLeftHand-local-anim-interpolation-array">LINEAR </Name_array>
+          <technique_common>
+            <accessor count="1" source="#WolfLeftHand-local-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfLeftHand-local-anim-outSource-local">
+          <float_array count="16" id="WolfLeftHand-local-anim-outSource-local-array">1.0 0.0 0.0 2.7806978 0.0 1.0 0.0 -0.090433896 0.0 0.0 1.0 0.035140336 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#WolfLeftHand-local-anim-outSource-local-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="WolfLeftHand-local-anim-localSampler">
+          <input semantic="INPUT" source="#WolfLeftHand-local-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#WolfLeftHand-local-anim-outSource-local"/>
+          <input semantic="INTERPOLATION" source="#WolfLeftHand-local-anim-interpolation"/>
+        </sampler>
+        <channel source="#WolfLeftHand-local-anim-localSampler" target="WolfLeftHand-local/matrix"/>
+      </animation>
+    </animation>
+    <animation id="WolfRightLeft-global-anim" name="WolfRightLeft-global-anim">
+      <animation>
+        <source id="WolfRightLeft-global-anim-inSource-TIME">
+          <float_array count="1" id="WolfRightLeft-global-anim-inSource-TIME-array">0.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#WolfRightLeft-global-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfRightLeft-global-anim-interpolation">
+          <Name_array count="1" id="WolfRightLeft-global-anim-interpolation-array">LINEAR </Name_array>
+          <technique_common>
+            <accessor count="1" source="#WolfRightLeft-global-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfRightLeft-global-anim-outSource-global">
+          <float_array count="16" id="WolfRightLeft-global-anim-outSource-global-array">1.0 0.0 0.0 -1.5136343 0.0 1.0 0.0 -0.37309885 0.0 0.0 1.0 1.5220263 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#WolfRightLeft-global-anim-outSource-global-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="WolfRightLeft-global-anim-globalSampler">
+          <input semantic="INPUT" source="#WolfRightLeft-global-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#WolfRightLeft-global-anim-outSource-global"/>
+          <input semantic="INTERPOLATION" source="#WolfRightLeft-global-anim-interpolation"/>
+        </sampler>
+        <channel source="#WolfRightLeft-global-anim-globalSampler" target="WolfRightLeft-global/matrix"/>
+      </animation>
+    </animation>
+    <animation id="WolfRightLeft-local-anim" name="WolfRightLeft-local-anim">
+      <animation>
+        <source id="WolfRightLeft-local-anim-inSource-TIME">
+          <float_array count="1" id="WolfRightLeft-local-anim-inSource-TIME-array">0.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#WolfRightLeft-local-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfRightLeft-local-anim-interpolation">
+          <Name_array count="1" id="WolfRightLeft-local-anim-interpolation-array">LINEAR </Name_array>
+          <technique_common>
+            <accessor count="1" source="#WolfRightLeft-local-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfRightLeft-local-anim-outSource-local">
+          <float_array count="16" id="WolfRightLeft-local-anim-outSource-local-array">1.0 0.0 0.0 0.028241515 0.0 1.0 0.0 -1.6237626 0.0 0.0 1.0 0.97383875 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#WolfRightLeft-local-anim-outSource-local-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="WolfRightLeft-local-anim-localSampler">
+          <input semantic="INPUT" source="#WolfRightLeft-local-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#WolfRightLeft-local-anim-outSource-local"/>
+          <input semantic="INTERPOLATION" source="#WolfRightLeft-local-anim-interpolation"/>
+        </sampler>
+        <channel source="#WolfRightLeft-local-anim-localSampler" target="WolfRightLeft-local/matrix"/>
+      </animation>
+    </animation>
+    <animation id="WolfLefFoot-global-anim" name="WolfLefFoot-global-anim">
+      <animation>
+        <source id="WolfLefFoot-global-anim-inSource-TIME">
+          <float_array count="1" id="WolfLefFoot-global-anim-inSource-TIME-array">0.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#WolfLefFoot-global-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfLefFoot-global-anim-interpolation">
+          <Name_array count="1" id="WolfLefFoot-global-anim-interpolation-array">LINEAR </Name_array>
+          <technique_common>
+            <accessor count="1" source="#WolfLefFoot-global-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfLefFoot-global-anim-outSource-global">
+          <float_array count="16" id="WolfLefFoot-global-anim-outSource-global-array">1.0 0.0 0.0 1.4465247 0.0 1.0 0.0 -0.32754278 0.0 0.0 1.0 1.5180769 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#WolfLefFoot-global-anim-outSource-global-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="WolfLefFoot-global-anim-globalSampler">
+          <input semantic="INPUT" source="#WolfLefFoot-global-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#WolfLefFoot-global-anim-outSource-global"/>
+          <input semantic="INTERPOLATION" source="#WolfLefFoot-global-anim-interpolation"/>
+        </sampler>
+        <channel source="#WolfLefFoot-global-anim-globalSampler" target="WolfLefFoot-global/matrix"/>
+      </animation>
+    </animation>
+    <animation id="WolfLefFoot-local-anim" name="WolfLefFoot-local-anim">
+      <animation>
+        <source id="WolfLefFoot-local-anim-inSource-TIME">
+          <float_array count="1" id="WolfLefFoot-local-anim-inSource-TIME-array">0.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#WolfLefFoot-local-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfLefFoot-local-anim-interpolation">
+          <Name_array count="1" id="WolfLefFoot-local-anim-interpolation-array">LINEAR </Name_array>
+          <technique_common>
+            <accessor count="1" source="#WolfLefFoot-local-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="WolfLefFoot-local-anim-outSource-local">
+          <float_array count="16" id="WolfLefFoot-local-anim-outSource-local-array">1.0 0.0 0.0 0.022384584 0.0 1.0 0.0 -1.6540141 0.0 0.0 1.0 0.9807658 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#WolfLefFoot-local-anim-outSource-local-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="WolfLefFoot-local-anim-localSampler">
+          <input semantic="INPUT" source="#WolfLefFoot-local-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#WolfLefFoot-local-anim-outSource-local"/>
+          <input semantic="INTERPOLATION" source="#WolfLefFoot-local-anim-interpolation"/>
+        </sampler>
+        <channel source="#WolfLefFoot-local-anim-localSampler" target="WolfLefFoot-local/matrix"/>
+      </animation>
+    </animation>
+  </library_animations>
+  <library_visual_scenes>
+    <visual_scene id="DefaultScene">
+      <node id="World-global" name="World-global" sid="World-global">
+        <matrix sid="matrix">1.0 0.0 -8.742278E-8 0.0 0.0 1.0 0.0 0.0 -8.742278E-8 0.0 -1.0 0.0 0.0 0.0 0.0 1.0 </matrix>
+        <node id="Wolf-global" name="Wolf-global" sid="Wolf-global">
+          <matrix sid="matrix">1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </matrix>
+          <node id="WolfBody-global" name="WolfBody-global" sid="WolfBody-global">
+            <matrix sid="matrix">1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.560434 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </matrix>
+            <node id="WolfBody-local" name="WolfBody-local" sid="WolfBody-local">
+              <matrix sid="matrix">1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.49999997 0.0 0.0 0.0 1.0 </matrix>
+              <instance_geometry url="#WolfBody-Geom">
+                <bind_material>
+                  <technique_common>
+                    <instance_material symbol="WolfBody-Material" target="#WolfBody-Material">
+                      <bind_vertex_input input_semantic="TEXCOORD" input_set="0" semantic="WolfBody-tex-bind"/>
+                    </instance_material>
+                  </technique_common>
+                </bind_material>
+              </instance_geometry>
+            </node>
+            <node id="WolfHead-global" name="WolfHead-global" sid="WolfHead-global">
+              <matrix sid="matrix">0.98662794 -4.656613E-10 -0.16298853 0.0 -0.008704141 0.99857295 -0.052689284 6.33646 0.16275595 0.0534034 0.98522 1.2754269 0.0 0.0 0.0 1.0 </matrix>
+              <node id="WolfHead-local" name="WolfHead-local" sid="WolfHead-local">
+                <matrix sid="matrix">1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.1381683 0.0 0.0 1.0 2.2494087 0.0 0.0 0.0 1.0 </matrix>
+                <instance_geometry url="#WolfHead-Geom">
+                  <bind_material>
+                    <technique_common>
+                      <instance_material symbol="WolfHead-Material" target="#WolfHead-Material">
+                        <bind_vertex_input input_semantic="TEXCOORD" input_set="0" semantic="WolfHead-tex-bind"/>
+                      </instance_material>
+                    </technique_common>
+                  </bind_material>
+                </instance_geometry>
+              </node>
+            </node>
+            <node id="WolfRightHand-global" name="WolfRightHand-global" sid="WolfRightHand-global">
+              <matrix sid="matrix">0.2207773 -0.9753242 0.0 -1.7450442 0.9753242 0.2207773 0.0 5.881599 0.0 0.0 1.0 1.4682372 0.0 0.0 0.0 1.0 </matrix>
+              <node id="WolfRightHand-local" name="WolfRightHand-local" sid="WolfRightHand-local">
+                <matrix sid="matrix">1.0 0.0 0.0 -2.9668972 0.0 1.0 0.0 -0.027064383 0.0 0.0 1.0 0.004058987 0.0 0.0 0.0 1.0 </matrix>
+                <instance_geometry url="#WolfRightHand-Geom">
+                  <bind_material>
+                    <technique_common>
+                      <instance_material symbol="WolfRightHand-Material" target="#WolfRightHand-Material">
+                        <bind_vertex_input input_semantic="TEXCOORD" input_set="0" semantic="WolfRightHand-tex-bind"/>
+                      </instance_material>
+                    </technique_common>
+                  </bind_material>
+                </instance_geometry>
+              </node>
+            </node>
+            <node id="WolfLeftHand-global" name="WolfLeftHand-global" sid="WolfLeftHand-global">
+              <matrix sid="matrix">0.24808538 0.96873814 0.0 1.9668088 -0.96873814 0.24808538 0.0 5.5938463 0.0 0.0 1.0 1.0974029 0.0 0.0 0.0 1.0 </matrix>
+              <node id="WolfLeftHand-local" name="WolfLeftHand-local" sid="WolfLeftHand-local">
+                <matrix sid="matrix">1.0 0.0 0.0 2.7806978 0.0 1.0 0.0 -0.090433896 0.0 0.0 1.0 0.035140336 0.0 0.0 0.0 1.0 </matrix>
+                <instance_geometry url="#WolfLeftHand-Geom">
+                  <bind_material>
+                    <technique_common>
+                      <instance_material symbol="WolfLeftHand-Material" target="#WolfLeftHand-Material">
+                        <bind_vertex_input input_semantic="TEXCOORD" input_set="0" semantic="WolfLeftHand-tex-bind"/>
+                      </instance_material>
+                    </technique_common>
+                  </bind_material>
+                </instance_geometry>
+              </node>
+            </node>
+            <node id="WolfRightLeft-global" name="WolfRightLeft-global" sid="WolfRightLeft-global">
+              <matrix sid="matrix">1.0 0.0 0.0 -1.5136343 0.0 1.0 0.0 -0.37309885 0.0 0.0 1.0 1.5220263 0.0 0.0 0.0 1.0 </matrix>
+              <node id="WolfRightLeft-local" name="WolfRightLeft-local" sid="WolfRightLeft-local">
+                <matrix sid="matrix">1.0 0.0 0.0 0.028241515 0.0 1.0 0.0 -1.6237626 0.0 0.0 1.0 0.97383875 0.0 0.0 0.0 1.0 </matrix>
+                <instance_geometry url="#WolfRightFoot-Geom">
+                  <bind_material>
+                    <technique_common>
+                      <instance_material symbol="WolfRightFoot-Material" target="#WolfRightFoot-Material">
+                        <bind_vertex_input input_semantic="TEXCOORD" input_set="0" semantic="WolfRightFoot-tex-bind"/>
+                      </instance_material>
+                    </technique_common>
+                  </bind_material>
+                </instance_geometry>
+              </node>
+            </node>
+            <node id="WolfLefFoot-global" name="WolfLefFoot-global" sid="WolfLefFoot-global">
+              <matrix sid="matrix">1.0 0.0 0.0 1.4465247 0.0 1.0 0.0 -0.32754278 0.0 0.0 1.0 1.5180769 0.0 0.0 0.0 1.0 </matrix>
+              <node id="WolfLefFoot-local" name="WolfLefFoot-local" sid="WolfLefFoot-local">
+                <matrix sid="matrix">1.0 0.0 0.0 0.022384584 0.0 1.0 0.0 -1.6540141 0.0 0.0 1.0 0.9807658 0.0 0.0 0.0 1.0 </matrix>
+                <instance_geometry url="#WolfLeftFoot-Geom">
+                  <bind_material>
+                    <technique_common>
+                      <instance_material symbol="WolfLeftFoot-Material" target="#WolfLeftFoot-Material">
+                        <bind_vertex_input input_semantic="TEXCOORD" input_set="0" semantic="WolfLeftFoot-tex-bind"/>
+                      </instance_material>
+                    </technique_common>
+                  </bind_material>
+                </instance_geometry>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#DefaultScene"/>
+  </scene>
+</COLLADA>
